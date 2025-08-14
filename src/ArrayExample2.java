@@ -23,6 +23,18 @@ public class ArrayExample2 {
             System.out.print(numbers[i] + " ");
         }
 
+        // Nuevo Ejemplo
+        int[] datos = {15, 16, 7, 88, 23};
+        int max = datos[0];
+
+        for (int numero : datos) {
+            if (numero > max) {
+                max = numero;
+            }
+        }
+
+        System.out.println("El valor maximo es: " + max);
+
         input.close();
     }
 }
