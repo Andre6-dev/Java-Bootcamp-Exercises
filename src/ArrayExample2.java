@@ -9,6 +9,8 @@ public class ArrayExample2 {
         int size = input.nextInt();
         int[] numbers = new int[size];
 
+        // Nuevo cambio
+
         // Llenar el arreglo con números ingresados por el usuario
         for (int i = 0; i < size; i++) {
             System.out.println("Ingrese el número " + (i + 1) + ": ");
