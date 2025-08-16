@@ -63,9 +63,46 @@ public class CollectionsGuide {
         // Streams nueva forma de iterar
         edades.forEach((clave, valor) -> System.out.println(clave + " tiene " + valor));
 
-        // Queue
-        Queue<Integer> q1 = new ArrayDeque<>();
+        // Queue - Cola
+        Queue<Persona> cola = new PriorityQueue<>(Comparator.comparing(Persona::getNombre));
+        Persona hola = new Persona("Luis", 29);
+        cola.add(new Persona("Luis", 29));
+        cola.add(new Persona("Andre", 24));
 
+        for (Persona persona : cola) {
+            System.out.println(persona.nombre);
+        }
 
+    }
+
+    public static class Persona implements Comparable<Persona> {
+        private String nombre;
+        private int edad;
+
+        public String getNombre() {
+            return nombre;
+        }
+
+        public void setNombre(String nombre) {
+            this.nombre = nombre;
+        }
+
+        public int getEdad() {
+            return edad;
+        }
+
+        public void setEdad(int edad) {
+            this.edad = edad;
+        }
+
+        public Persona(String nombre, int edad) {
+            this.nombre = nombre;
+            this.edad = edad;
+        }
+
+        @Override
+        public int compareTo(Persona o) {
+            return Integer.compare(this.edad, o.edad);
+        }
     }
 }
